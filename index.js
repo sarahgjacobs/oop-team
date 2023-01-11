@@ -5,12 +5,13 @@ const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const team = []
+const generateHtml = require("./html/generateHTML.js")
 
-// Generate HTML page
-// const generateHTML = require('./html/test')
+
+
 
 // Add questions for user input
-// Should this be seperated by type of employee?
+
 const questions = [
 
 {   type: 'input',
@@ -28,6 +29,8 @@ const questions = [
     name: 'email'
 }
 ]
+
+// Run a loop that asks for user input until they select done
 const mainMenu = () => {
     inquirer.prompt({
         type: "list", 
@@ -42,8 +45,7 @@ const mainMenu = () => {
         } else if (answer.direction === "Intern") {
             addIntern()
         } else {
-            // buildTeam()
-            console.log(team)
+            writeHTML();
         }
     })
 }
@@ -78,3 +80,8 @@ const addIntern = () => {
 
 
 mainMenu();
+
+// Parse the information to an HTML page
+function writeHTML () {
+    fs.writeFile('./html/index.html', generateHtml(team), (err) => err ? console.log(err) : console.log("Your team page is built check out index.html!"))
+        }
