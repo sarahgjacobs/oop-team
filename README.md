@@ -9,5 +9,6 @@
 ## Usage
   Once everything has been installed and set up, run the application by typing node index.js into your terminal. You will be prompted to input employee information.
   See [this video](https://vimeo.com/789866678) to watch a full demonstration and explanation of the application.
-  See the image below for the completed website
+  See the image below for the completed website:
+
  ![Deployed Website](./Images/Screen%20Shot%202023-01-16%20at%205.44.06%20PM.png)
